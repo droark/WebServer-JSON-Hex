@@ -69,7 +69,7 @@ Install the following packages in the following order but not before reading the
 * [Flask](http://flask.pocoo.org/)  (pip install Flask)  *venv*
 * [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/)  (pip install flask-sqlalchemy)  *venv*
 * [Whoosh](https://pypi.python.org/pypi/Whoosh/)  (pip install whoosh)  *venv*
-* [Whoosh-Alchemy](https://pypi.python.org/pypi/Flask-WhooshAlchemy)  (pip install whoosh-alchemy)  *venv*
+* [Whoosh-Alchemy](https://pypi.python.org/pypi/Flask-WhooshAlchemy)  (pip install whoosh-alchemy (Ubuntu 15.10) *OR* pip install flask_whooshalchemy (Ubuntu 14.04))  *venv*
 * [SQLAlchemy-migrate](https://pypi.python.org/pypi/sqlalchemy-migrate)  (pip install sqlalchemy-migrate)  *venv*
 
 This code is tested only against 2.7. At least one piece of code may not run on Python 3, although this has not been tested. Ideally, code that runs on Python 2 should have a migration plan for when either Python 2 support is dropped or a decision is made to move to Python 3.
@@ -80,10 +80,11 @@ Note that all the *pip install* steps have a "venv" marking next to them. This i
 The following steps apply to Linux. Run all the following commands in the same window. Note that this code has not yet been tested under Windows or OS X. In addition, note that usage of *virtualenv* is optional but [highly recommended by Flask's maintainers](http://flask.pocoo.org/docs/0.10/installation/).
 
 * Ensure that Python, Apache, WSGI, and virtualenv are installed.
-  * Once WSGI is installed, the command *sudo a2enmod wsgi* must be run to ensure that the module is picked up. In Ubuntu, this should be sufficient to ensure that Apache will pick up the module and start allowing it to be used.
+  * Once WSGI is installed, the command *sudo a2enmod wsgi* may need to be run to ensure that the module is picked up. Run it to be safe. In Ubuntu, this should be sufficient to ensure that Apache will pick up the module and start allowing it to be used.
 * Follow the Flask recommendation to [set up virtualenv](http://flask.pocoo.org/docs/0.10/installation/). Run the following commands in order from this project's base directory.
   * *virtualenv venv*
   * *. venv/bin/activate*
+* Use *pip* to install the aforementioned Python packages in the virtual environment.
 * Run *python db_create.py* to create the SQLite database.
 * Run *python WebServerHashJSON.py* to start the server.
 * Once you're ready to quit the server, hit <CTRL+C> to quit.
