@@ -69,7 +69,7 @@ Install the following packages in the following order but not before reading the
 * [Flask](http://flask.pocoo.org/)  (pip install Flask)  *venv*
 * [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/)  (pip install flask-sqlalchemy)  *venv*
 * [Whoosh](https://pypi.python.org/pypi/Whoosh/)  (pip install whoosh)  *venv*
-* [Whoosh-Alchemy](https://pypi.python.org/pypi/Flask-WhooshAlchemy)  (pip install whoosh-alchemy (Ubuntu 15.10) *OR* pip install flask_whooshalchemy (Ubuntu 14.04))  *venv*
+* [Whoosh-Alchemy](https://pypi.python.org/pypi/Flask-WhooshAlchemy)  (pip install flask_whooshalchemy)  *venv*
 * [SQLAlchemy-migrate](https://pypi.python.org/pypi/sqlalchemy-migrate)  (pip install sqlalchemy-migrate)  *venv*
 
 This code is tested only against 2.7. At least one piece of code may not run on Python 3, although this has not been tested. Ideally, code that runs on Python 2 should have a migration plan for when either Python 2 support is dropped or a decision is made to move to Python 3.
