@@ -126,4 +126,6 @@ SQLite was chosen because it's a relatively simple DB that's portable and well-s
 
 Apache 2.x was chosen because it's the default deployment on Ubuntu. Some might argue that nginx is a better choice these days. Whether or not nginx is better, this project is designed to be deployable with as little manual operation by the user as possible.
 
+Whoosh isn't strictly necessary to search a DB. It just makes searching a bit more convenient. If you're willing to use SQLAlchemy's API to generate SQL queries, or to directly write SQL queries, you can skip Whoosh. The only advantages to Whoosh are that queries are a bit easier to understand, and you don't have to worry about some of the nuances of SQLAlchemy (e.g., save the query output from fetchall(), as [fetchall() will fail if you call it directly again](http://docs.sqlalchemy.org/en/latest/core/connections.html?highlight=fetchall#sqlalchemy.engine.ResultProxy.fetchall)).
+
 A script (db_migrate.py) has been included to accommodate cases where the DB view is changed. It shouldn't be needed but is included as a courtesy.

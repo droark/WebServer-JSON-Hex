@@ -3,6 +3,8 @@ from webConfig import MAX_SEARCH_RESULTS
 from flask import request
 from hashlib import sha256
 from sqlalchemy import exc
+#from sqlalchemy import exc, asc, desc
+#from sqlalchemy.sql import select
 import sys
 import json
 import string
@@ -46,6 +48,23 @@ def searchDB(searchKey):
     SHA-256 hash of the data in the DB). Designed to retrieve only one object,
     as there should be only one object in the DB anyway.
     """
+
+    # Here's a bit of code showing how to query without Whoosh, which adds
+    # overhead.
+    # 1)Search for a specific key and print the retrieved SHA-256 hash.
+#    mySQLQuery0 = select([models.SHA_JSON_DB]).where(models.SHA_JSON_DB.sha256Hash == searchKey)
+#    mySQLQueryRes0 = db.session.execute(mySQLQuery0)
+#    for item0 in mySQLQueryRes0.fetchall():
+#        print 'DEBUG: SHA-256 Hash = %s' % item0.sha256Hash
+#
+    # 2)Get everything sorted in a particular order and print everything
+    #   in the entry, broken down.
+#    mySQLQuery1 = select([models.SHA_JSON_DB]).order_by(desc(models.SHA_JSON_DB.sha256Hash))
+#    mySQLQueryRes1 = db.session.execute(mySQLQuery1)
+#    for item1 in mySQLQueryRes1.fetchall():
+#        print 'DEBUG: Query Contents (descending): Column 1 = %d' % item1[0]
+#        print 'DEBUG: Query Contents (descending): Column 2 = %s' % item1[1]
+#        print 'DEBUG: Query Contents (descending): Column 3 = %s' % item1[2]
 
     searchRes = None
     try:
